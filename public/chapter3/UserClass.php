@@ -1,5 +1,8 @@
 <?php
 class UserClass{
+    function __construct() {
+        print "In UserClass constructor\n";
+    }
     /* User variables */
     var $firstName;
     var $LastName;
@@ -15,6 +18,9 @@ class UserClass{
     }
     function getLastName(){
         echo $this->LastName;
+    }
+    function __destruct() {
+        print "Destroying " . __CLASS__ ."\n";
     }
 }
 $user = new UserClass();
